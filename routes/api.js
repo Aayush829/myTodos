@@ -17,4 +17,14 @@ router.post('/authenticate', authenticate.authenticate)
 
 var checkTodo = require('../api/checkTodo')
 router.post('/checkTodo', checkTodo.checkTodo)
+
+var deleteTodo = require('../api/deleteTodo')
+router.post('/deleteTodo', deleteTodo.deleteTodo)
+
+var listTodo = require('../api/listTodo')
+router.post('/listTodo', listTodo.listTodo)
+
+var logout = require('../api/logout')
+router.post('/logout', logout.logout)
+
 module.exports = router;
