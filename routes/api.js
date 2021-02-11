@@ -1,6 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
+var auth = function (req, res, next) {
+	if (req.session.email && req.session.isLogged) {
+		return next();
+		// req.session.destroy();
+	}	
+	else
+		return res.json({ status: 'FAILED', message: 'Please login.' });
+};
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
