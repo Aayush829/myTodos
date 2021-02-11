@@ -3,7 +3,7 @@ function SignOff() {
     .then(function (response) {
         if (response.data.isLogged == false) {
             location.replace('/')
-            alert('you looged out');
+            alert('you logged out');
         }
     });
 }
