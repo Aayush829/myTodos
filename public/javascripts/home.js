@@ -79,6 +79,7 @@ function listTodo() {
 
         span.addEventListener("click", deleteTodo, false);
         span2.addEventListener('click', checkTodo, false);
+      
         
         document.getElementById("myUL").appendChild(li);
         
@@ -114,10 +115,10 @@ function listAfterAdd()
   
         span.addEventListener("click", deleteTodo, false);
         span2.addEventListener('click', checkTodo, false);
+        
   
         document.getElementById("myUL").appendChild(li);
 }
-
 
 
 function deleteTodo()
@@ -160,6 +161,9 @@ function deleteTodo()
         });
 
 }
+
+
+
     
 function checkTodo()
 {

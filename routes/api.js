@@ -59,6 +59,7 @@ var listTodo = require('../api/listTodo')
 var deleteTodo = require('../api/deleteTodo')
 var checkTodo = require('../api/checkTodo')
 
+
 router.post('/authenticate', authenticate.authenticate)
 router.post('/adduser', addUser.addUser)
 router.post('/logout',logout.logout)
@@ -66,6 +67,7 @@ router.post('/add',addTodo.add)
 router.post('/list/',auth, listTodo.list)
 router.post('/delete', deleteTodo.del)
 router.post('/check',checkTodo.check)
+
 
 
 module.exports = router;
