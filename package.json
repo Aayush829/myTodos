@@ -6,6 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "^4.16.4",
@@ -15,6 +16,7 @@
     "mongoose": "^5.11.15",
     "morgan": "~1.9.1",
     "node-modules": "^1.0.1",
+    "nodemon": "^2.0.7",
     "serve-favicon": "^2.5.0"
   },
   "main": "app.js",
