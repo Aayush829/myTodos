@@ -17,7 +17,7 @@ authenticate = (req, res, next) => {
 				res.json({ success: false, message: 'Authentication failed. Wrong password.' });
 			} else {
 
-
+				
 				req.session.email = req.body.email;
 				req.session.isLogged = true;
 				console.log('inside auth', req.session.email);

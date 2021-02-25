@@ -3,21 +3,25 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "test": "mocha",
     "start": "node ./bin/www"
   },
   "dependencies": {
     "bcrypt": "^5.0.0",
+    "bcryptjs": "^2.4.3",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
-    "express": "^4.16.4",
+    "express": "^4.17.1",
     "express-session": "^1.17.1",
     "hbs": "^4.0.6",
     "http-errors": "~1.6.3",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.15",
     "morgan": "~1.9.1",
     "node-modules": "^1.0.1",
     "nodemon": "^2.0.7",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
+    "sinon": "^9.2.4"
   },
   "main": "app.js",
   "repository": {
@@ -30,5 +34,9 @@
     "url": "https://github.com/Aayush829/myTodos/issues"
   },
   "homepage": "https://github.com/Aayush829/myTodos#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "chai": "^4.3.0",
+    "mocha": "^8.3.0"
+  }
 }

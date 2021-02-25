@@ -5,9 +5,37 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
+var jwt = require('jsonwebtoken');
+var bcrypt = require('bcryptjs');
+
+const createToken = async() =>  {
+    const token = await jwt.sign({_id:"60256a6783908400153acb5c"},"12345678123456781234567812345678",{
+      expiresIn:"10 seconds"
+    });
+    console.log(token);
+
+    const userVerify = await jwt.verify(token, "12345678123456781234567812345678");
+    console.log(userVerify);
+}
+
+createToken();
+
+
+
+
+const securePassword = async(password) => {
+   const passwordHash = await bcrypt.hash(password, 10);
+   console.log(passwordHash);
+
+   const passwordmatch = await bcrypt.compare(password, passwordHash);
+   console.log(passwordmatch);
+}
+
+securePassword("aayu829");
 
 var view = require('./routes/view');
 var api = require('./routes/api');
+const { create } = require('hbs');
 
 var app = express();
 
