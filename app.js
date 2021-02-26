@@ -4,9 +4,9 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var session = require('express-session');
+// var session = require('express-session');
 var jwt = require('jsonwebtoken');
-var bcrypt = require('bcryptjs');
+// var bcrypt = require('bcryptjs');
 
 const createToken = async() =>  {
     const token = await jwt.sign({_id:"60256a6783908400153acb5c"},"12345678123456781234567812345678",{
@@ -23,15 +23,15 @@ createToken();
 
 
 
-const securePassword = async(password) => {
-   const passwordHash = await bcrypt.hash(password, 10);
-   console.log(passwordHash);
+// const securePassword = async(password) => {
+//    const passwordHash = await bcrypt.hash(password, 10);
+//    console.log(passwordHash);
 
-   const passwordmatch = await bcrypt.compare(password, passwordHash);
-   console.log(passwordmatch);
-}
+//    const passwordmatch = await bcrypt.compare(password, passwordHash);
+//    console.log(passwordmatch);
+// }
 
-securePassword("aayu829");
+// securePassword("aayu829");
 
 var view = require('./routes/view');
 var api = require('./routes/api');
@@ -43,12 +43,12 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
-app.use(session({
-	// Here we are creating a unique session identifier
-	secret: 'secret1234',
-	resave: true,
-	saveUninitialized: true
-}));
+// app.use(session({
+// 	// Here we are creating a unique session identifier
+// 	secret: 'secret1234',
+// 	resave: true,
+// 	saveUninitialized: true
+// }));
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));

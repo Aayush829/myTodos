@@ -5,10 +5,10 @@ function userLogin() {
 	var password = document.getElementById("loginPassword").value;
 	axios.post('/api/authenticate', {
 		email: email,
-		password: password
+		password: zpassword
 	})
 		.then(function (response) {
-			console.log('singn in res', response);
+			console.log('sign in res', response);
 			if (response.data.success && response.data.isLogged) {
 				location.replace('/home')
 
