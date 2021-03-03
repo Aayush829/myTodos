@@ -1,9 +1,10 @@
 var db = require('../mongodb');
+const bcrypt = require('bcrypt');
 
 authenticate = (req, res, next) => {
 
 	db.Accounts.findOne({
-		email: req.body.email, password: req.body.password
+		email: req.body.email
 	}, function (err, user) {
 
 		if (err) throw err;
@@ -11,9 +12,11 @@ authenticate = (req, res, next) => {
 		if (!user) {
 			res.json({ success: false, message: 'Authentication failed. User not found.' });
 		} else if (user) {
-
+			let result = bcrypt.compareSync(req.body.password, user.password);
+			console.log("login user", user, req.body);
+			console.log("result", result);
 			// check if password matches
-			if (user.password != req.body.password) {
+			if (!result) {
 				res.json({ success: false, message: 'Authentication failed. Wrong password.' });
 			} else {
 

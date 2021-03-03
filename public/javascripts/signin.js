@@ -1,3 +1,4 @@
+ 
 function userSignIn() {
 	var email = document.getElementById("signinEmail").value;
     var password = document.getElementById("signinPassword").value;
@@ -7,7 +8,7 @@ function userSignIn() {
 		password: password
 	})
 		.then(function (response) {
-			console.log('singn in res', response);
+			console.log('signin res', response);
 			if (response.data.success && response.data.isLogged) {
 				location.replace('/home')
 
